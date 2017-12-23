@@ -62,6 +62,24 @@ var Crossfit;
         return FitbitRefresh;
     }());
     Crossfit.FitbitRefresh = FitbitRefresh;
+    var FitbitRedirect = /** @class */ (function () {
+        function FitbitRedirect() {
+            this.connector = new fitbit_1.FitBitConnector();
+        }
+        FitbitRedirect.prototype.handle = function (req, res, next) {
+            this.connector.redirect().subscribe(function (t) {
+                res.send(t);
+            }, function (err) {
+                res.send(500);
+            });
+        };
+        FitbitRedirect = __decorate([
+            grapple_1.httpGet('/fitbit/redirect'),
+            __metadata("design:paramtypes", [])
+        ], FitbitRedirect);
+        return FitbitRedirect;
+    }());
+    Crossfit.FitbitRedirect = FitbitRedirect;
 })(Crossfit || (Crossfit = {}));
 grapple_1.grapple([Crossfit]);
 //# sourceMappingURL=index.js.map

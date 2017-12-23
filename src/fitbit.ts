@@ -47,5 +47,13 @@ export class FitBitConnector {
         });
     }
 
+    redirect(): Observable<any> {
+        return new Observable(ob => {
+            var url = this.client.getAuthorizationUrl(this.redirect_uri, this.scope);
+            ob.next({ url: url });
+            ob.complete();
+        });
+    }
+
 }
 

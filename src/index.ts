@@ -45,6 +45,23 @@ module Crossfit {
             });            
         }
     }
+
+    @httpGet('/fitbit/redirect')
+    export class FitbitRedirect {
+        connector: FitBitConnector;
+        
+        constructor() {
+            this.connector = new FitBitConnector();
+        }
+
+        handle(req, res, next) {
+            this.connector.redirect().subscribe(t => {
+                res.send(t);
+            }, (err) => {
+                res.send(500);
+            });            
+        }
+    }
 }
 
 grapple([Crossfit]);

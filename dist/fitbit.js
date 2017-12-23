@@ -42,6 +42,14 @@ var FitBitConnector = /** @class */ (function () {
             });
         });
     };
+    FitBitConnector.prototype.redirect = function () {
+        var _this = this;
+        return new rxjs_1.Observable(function (ob) {
+            var url = _this.client.getAuthorizationUrl(_this.redirect_uri, _this.scope);
+            ob.next({ url: url });
+            ob.complete();
+        });
+    };
     return FitBitConnector;
 }());
 exports.FitBitConnector = FitBitConnector;
