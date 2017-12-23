@@ -11,7 +11,7 @@ export class FitBitConnector {
 
     constructor() {
         this.client = new FitbitClient('22CGY6', '3e94747028c020bece22aa395baac816');
-        this.redirect_uri = 'http://localhost:3000/oauth_callback';
+        this.redirect_uri = 'http://localhost:3000/oauth2/0';
         this.scope =  [ 'activity', 'nutrition', 'profile', 'settings', 'sleep', 'social', 'weight' ];
     }
 
