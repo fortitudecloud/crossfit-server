@@ -13,12 +13,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fitbit-client-oauth2": "^2.0.3",
     "grapple": "github:fortitudecloud/grapple",
     "grapple-mongo": "github:fortitudecloud/grapple-mongo",
-    "reflect-metadata": "^0.1.10"
+    "reflect-metadata": "^0.1.10",
+    "request-promise": "^4.2.2",
+    "rxjs": "^5.5.6"
   },
   "devDependencies": {
     "@types/grapple": "github:fortitudecloud/types-grapple",
+    "@types/node": "^8.5.2",
     "@types/reflect-metadata": "0.0.5",
     "nodemon": "^1.12.1"
   }

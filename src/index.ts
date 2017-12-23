@@ -1,4 +1,5 @@
-import { grapple, apiware, httpGet } from 'grapple';
+import { grapple, apiware, httpGet, httpPost } from 'grapple';
+import { FitBitConnector } from './fitbit';
 
 module Crossfit {
     @apiware()
@@ -11,14 +12,37 @@ module Crossfit {
         }
     }
 
-    @httpGet('/user')
-    export class User {
-        constructor() {}
+    @httpGet('/fitbit/auth')
+    export class FitbitAuth {
+        connector: FitBitConnector;
+
+        constructor() {
+            this.connector = new FitBitConnector();
+        }
 
         handle(req, res, next) {
-            res.send({
-                status: 200
-            });
+            this.connector.auth(req.params.code).subscribe(t => {
+                res.send(t);
+            }, (err) => {
+                res.send(500);
+            });            
+        }
+    }
+
+    @httpPost('/fitbit/refresh')
+    export class FitbitRefresh {
+        connector: FitBitConnector;
+        
+        constructor() {
+            this.connector = new FitBitConnector();
+        }
+
+        handle(req, res, next) {
+            this.connector.refresh(req.body).subscribe(t => {
+                res.send(t);
+            }, (err) => {
+                res.send(500);
+            });            
         }
     }
 }
