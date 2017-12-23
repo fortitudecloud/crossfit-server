@@ -43,7 +43,7 @@
       "name": "Attach to Docker Remote",
       "preLaunchTask": "tsc-watch",
       "protocol": "legacy",
-      "port": 5858,
+      "port": 8585,
       "address": "192.168.15.178",
       "restart": true,
       "localRoot": "${workspaceRoot}/dist",
