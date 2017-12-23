@@ -1,0 +1,12 @@
+{
+    "hooked": [{
+        "module": "grapple-mongo",
+        "type": "db"
+    }],
+    "network": {
+        "networkName": "crossfit",
+        "networkId": "crossfit",
+        "defaultDbName": "crossfit",
+        "defaultDbAddr": "localhost"
+    }
+}

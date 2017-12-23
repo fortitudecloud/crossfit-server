@@ -1,0 +1,25 @@
+{
+  "name": "crossfit-server",
+  "version": "0.0.1",
+  "description": "crossfit server",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc -w -p ./src",
+    "debug": "nodemon --watch ./dist --debug=0.0.0.0:5858 --debug-brk --nolazy",
+    "nodemon": "nodemon --watch ./dist --nolazy",
+    "start": "node ./dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "grapple": "github:fortitudecloud/grapple",
+    "grapple-mongo": "github:fortitudecloud/grapple-mongo",
+    "reflect-metadata": "^0.1.10"
+  },
+  "devDependencies": {
+    "@types/grapple": "github:fortitudecloud/types-grapple",
+    "@types/reflect-metadata": "0.0.5",
+    "nodemon": "^1.12.1"
+  }
+}
