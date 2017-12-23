@@ -1,5 +1,5 @@
 module.exports = {
     localDir: 'dist', 
-    remoteDir: 'mongo-api/dist',
+    remoteDir: 'crossfit-server/dist',
     host: '192.168.15.178'
 }
