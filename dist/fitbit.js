@@ -6,9 +6,9 @@ var FitbitClient = require('fitbit-client-oauth2');
 var FitBitConnector = /** @class */ (function () {
     function FitBitConnector() {
         this.scope = [];
-        this.client = new FitbitClient('22CGY6', '3e94747028c020bece22aa395baac816');
+        this.client = new FitbitClient('22CH93', 'c2530f96f0c9beb2007505a6d8dd4f78');
         this.redirect_uri = 'http://localhost:3000/oauth2/0';
-        this.scope = ['activity', 'nutrition', 'profile', 'settings', 'sleep', 'social', 'weight'];
+        this.scope = ['activity', 'profile', 'settings'];
     }
     FitBitConnector.prototype.auth = function (code) {
         var _this = this;
@@ -45,7 +45,7 @@ var FitBitConnector = /** @class */ (function () {
     FitBitConnector.prototype.redirect = function () {
         var _this = this;
         return new rxjs_1.Observable(function (ob) {
-            var url = _this.client.getAuthorizationUrl(_this.redirect_uri, _this.scope);
+            var url = _this.client.getAuthorizationUrl(_this.redirect_uri, _this.scope.join(' '));
             ob.next({ url: url });
             ob.complete();
         });

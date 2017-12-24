@@ -38,7 +38,7 @@ var Crossfit;
             });
         };
         FitbitAuth = __decorate([
-            grapple_1.httpGet('/fitbit/auth'),
+            grapple_1.httpGet('/fitbit/auth/:code'),
             __metadata("design:paramtypes", [])
         ], FitbitAuth);
         return FitbitAuth;

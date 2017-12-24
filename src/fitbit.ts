@@ -10,9 +10,9 @@ export class FitBitConnector {
     scope = [];    
 
     constructor() {
-        this.client = new FitbitClient('22CGY6', '3e94747028c020bece22aa395baac816');
+        this.client = new FitbitClient('22CH93', 'c2530f96f0c9beb2007505a6d8dd4f78');
         this.redirect_uri = 'http://localhost:3000/oauth2/0';
-        this.scope =  [ 'activity', 'nutrition', 'profile', 'settings', 'sleep', 'social', 'weight' ];
+        this.scope =  [ 'activity', 'profile', 'settings' ];
     }
 
     auth(code: string): Observable<any> {
@@ -49,7 +49,7 @@ export class FitBitConnector {
 
     redirect(): Observable<any> {
         return new Observable(ob => {
-            var url = this.client.getAuthorizationUrl(this.redirect_uri, this.scope);
+            var url = this.client.getAuthorizationUrl(this.redirect_uri, this.scope.join(' '));
             ob.next({ url: url });
             ob.complete();
         });

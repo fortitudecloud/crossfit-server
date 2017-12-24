@@ -12,7 +12,7 @@ module Crossfit {
         }
     }
 
-    @httpGet('/fitbit/auth')
+    @httpGet('/fitbit/auth/:code')
     export class FitbitAuth {
         connector: FitBitConnector;
 
