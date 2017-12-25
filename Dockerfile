@@ -1,4 +1,5 @@
-FROM node:7.4.0-slim
+FROM node
+#FROM node:7.4.0-slim
 #FROM grapple
 #FROM hypriot/rpi-node
 #FROM amble/nodemonjs7-pi
