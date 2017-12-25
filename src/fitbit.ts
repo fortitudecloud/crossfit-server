@@ -11,7 +11,11 @@ export class FitBitConnector {
 
     constructor() {
         this.client = new FitbitClient('22CH93', 'c2530f96f0c9beb2007505a6d8dd4f78');
-        this.redirect_uri = 'http://localhost:3000/oauth2/0';
+
+        // this.redirect_uri = 'http://lcoalhost:3000/oauth2/0';
+        // this.redirect_uri = 'http://192.168.15.178:5200/oauth2/0';
+        this.redirect_uri = 'https://35.189.50.219/oauth2/0';
+        
         this.scope =  [ 'activity', 'profile', 'settings' ];
     }
 
