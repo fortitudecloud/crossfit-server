@@ -14,7 +14,7 @@ export class FitBitConnector {
 
         // this.redirect_uri = 'http://localhost:3000/oauth2/0';
         // this.redirect_uri = 'http://192.168.15.178:5200/oauth2/0';
-        this.redirect_uri = 'https://35.189.50.219/oauth2/0';
+        this.redirect_uri = 'http://35.189.50.219/oauth2/0';
         
         this.scope =  [ 'activity', 'profile', 'settings' ];
     }
